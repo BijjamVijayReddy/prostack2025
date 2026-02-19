@@ -1,23 +1,36 @@
+import type { SidebarKey } from "./sidebar.types";
 import {
   HomeIcon,
-  UsersIcon,
-  FolderIcon,
-  ChartPieIcon,
+  UserGroupIcon,
+  DocumentTextIcon,
+  ChartBarIcon,
 } from "@heroicons/react/24/outline";
 
-export type SidebarKey =
-  | "dashboard"
-  | "users"
-  | "projects"
-  | "reports";
-
-export const SIDEBAR_ITEMS: {
+export interface SidebarItem {
   key: SidebarKey;
   label: string;
   icon: React.ComponentType<any>;
-}[] = [
-  { key: "dashboard", label: "Dashboard", icon: HomeIcon },
-  { key: "users", label: "Users", icon: UsersIcon },
-  { key: "projects", label: "Projects", icon: FolderIcon },
-  { key: "reports", label: "Reports", icon: ChartPieIcon },
+}
+
+export const SIDEBAR_ITEMS: SidebarItem[] = [
+  {
+    key: "dashboard",
+    label: "Dashboard",
+    icon: HomeIcon,
+  },
+  {
+    key: "students",
+    label: "Students",
+    icon: UserGroupIcon,
+  },
+  {
+    key: "enquiry",
+    label: "Enquiry",
+    icon: DocumentTextIcon,
+  },
+  {
+    key: "reports",
+    label: "Reports",
+    icon: ChartBarIcon,
+  },
 ];

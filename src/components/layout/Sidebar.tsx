@@ -21,7 +21,7 @@ export function Sidebar() {
       `}
     >
       {/* Logo */}
-      <div className="flex h-16 items-center gap-3 mt-5 px-4">
+      <div className="flex h-16 items-center gap-3 px-4">
         <Image
           src="/proStacklogo.png"
           alt="Prostack logo"

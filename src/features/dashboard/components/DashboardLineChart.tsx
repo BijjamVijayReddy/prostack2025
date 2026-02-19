@@ -29,7 +29,7 @@ export function DashboardLineChart() {
       <h3 className="mb-3 text-sm font-semibold text-white">
         Daily Trend
       </h3>
-      <ReactECharts option={option} style={{ height: 320 }} />
+      <ReactECharts option={option} style={{ height: 350 }} />
     </div>
   );
 }
