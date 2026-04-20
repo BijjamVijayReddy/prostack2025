@@ -388,8 +388,6 @@ button .lucide,
   border-radius: 9999px;
 }
 
-/* @theme inline is already declared at the top of this file */
-
 /* ── Global select border-radius ── */
 select {
   border-radius: 7px !important;
