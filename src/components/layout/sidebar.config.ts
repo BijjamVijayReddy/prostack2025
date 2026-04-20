@@ -3,7 +3,7 @@ import {
   HomeIcon,
   UserGroupIcon,
   DocumentTextIcon,
-  ChartBarIcon,
+  BriefcaseIcon,
 } from "@heroicons/react/24/outline";
 
 export interface SidebarItem {
@@ -29,8 +29,8 @@ export const SIDEBAR_ITEMS: SidebarItem[] = [
     icon: DocumentTextIcon,
   },
   {
-    key: "reports",
-    label: "Reports",
-    icon: ChartBarIcon,
+    key: "placements",
+    label: "Placements",
+    icon: BriefcaseIcon,
   },
 ];

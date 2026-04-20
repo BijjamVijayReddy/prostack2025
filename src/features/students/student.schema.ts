@@ -5,7 +5,10 @@ export const studentSchema = yup.object({
   name: yup.string().min(3).required("Full name is required"),
 
   admissionMonth: yup.string().required("Admission month is required"),
-  courseTakenDate: yup.string().required("Admission date is required"),
+  courseTakenDate: yup.string().optional(),
+  joinedDate: yup.string().required("Joined date is required"),
+
+  placementStatus: yup.string().oneOf(["Not Placed", "Placed"]).optional(),
 
   mobile: yup
     .string()
@@ -30,6 +33,7 @@ export const studentSchema = yup.object({
 
   dueDate: yup.string().nullable(),
   paymentMode: yup.string().required("Payment mode is required"),
+  receiptNo: yup.string().optional(),
 
   photo: yup.string().nullable(),
 });

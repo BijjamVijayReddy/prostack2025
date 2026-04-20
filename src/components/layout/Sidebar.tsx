@@ -2,12 +2,28 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { useRouter, usePathname } from "next/navigation";
 import { SIDEBAR_ITEMS } from "./sidebar.config";
-import { useLayout } from "./LayoutContext";
+import type { SidebarKey } from "./sidebar.types";
+
+const ROUTE_MAP: Record<SidebarKey, string> = {
+  dashboard: "/",
+  students: "/students",
+  enquiry: "/enquiry",
+  placements: "/placements",
+};
 
 export function Sidebar() {
   const [expanded, setExpanded] = useState(false);
-  const { active, setActive } = useLayout();
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const activeKey: SidebarKey =
+    pathname === "/" ? "dashboard"
+    : pathname.startsWith("/students") ? "students"
+    : pathname.startsWith("/enquiry") ? "enquiry"
+    : pathname.startsWith("/placements") ? "placements"
+    : "dashboard";
 
   return (
     <aside
@@ -28,28 +44,18 @@ export function Sidebar() {
           width={250}
           height={250}
         />
-
-        {/* <span
-          className={`
-            whitespace-nowrap text-lg font-semibold text-white
-            transition-all duration-300
-            ${expanded ? "opacity-100" : "opacity-0"}
-          `}
-        >
-          Prostack
-        </span> */}
       </div>
 
       {/* Menu */}
       <nav className="mt-6 flex flex-col gap-2 px-2">
         {SIDEBAR_ITEMS.map((item) => {
           const Icon = item.icon;
-          const isActive = active === item.key;
+          const isActive = activeKey === item.key;
 
           return (
             <div
               key={item.key}
-              onClick={() => setActive(item.key)}
+              onClick={() => router.push(ROUTE_MAP[item.key])}
               className={`
                 group relative flex cursor-pointer items-center gap-4
                 rounded-xl px-3 py-3 transition

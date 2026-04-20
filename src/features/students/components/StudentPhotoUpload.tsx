@@ -39,7 +39,7 @@ export function StudentPhotoUpload({ photo, setPhoto }: Props) {
         <button
           type="button"
           onClick={() => inputRef.current?.click()}
-          className="absolute bottom-0 right-0 rounded-full bg-indigo-600 p-1 text-white hover:bg-indigo-700"
+          className="absolute bottom-0 right-0 rounded-full bg-indigo-600 p-1 text-white hover:bg-indigo-700 cursor-pointer"
           title="Upload photo"
         >
           <CameraIcon className="h-4 w-4 cursor-pointer" />

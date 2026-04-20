@@ -1,8 +1,12 @@
 export interface Student {
+  _id?: string;
   admissionNo: string;
   name: string;
   admissionMonth: string;
-  courseTakenDate: string;
+  courseTakenDate?: string;
+  joinedDate: string;
+
+  placementStatus?: "Not Placed" | "Placed";
 
   mobile: string;
   email: string;
@@ -17,6 +21,8 @@ export interface Student {
   pendingAmount: number;
   dueDate?: string;
   paymentMode: string;
+  receiptNo?: string;
 
   photo?: string | null;
+  updatedAt?: string;
 }
